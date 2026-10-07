@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dzivarasekwa 2 High School | Sports Events Management System</title>
+<link rel="icon" href="images/file_00000000f6bc824695590598c9b939bf.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="images/file_00000000f6bc824695590598c9b939bf.png" alt="Dzivarasekwa 2 High School crest" class="brand-logo">
+      <div class="brand-text">
+        <span class="brand-name">Dzivarasekwa 2 High School</span>
+        <span class="brand-sub">Sports Events Management System</span>
+      </div>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#fixtures">Fixtures</a>
+      <a href="#sports">Sports</a>
+      <a href="#venues">Venues</a>
+      <a href="#results">Results</a>
+      <a href="#management">Management</a>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <img src="images/file_00000000f6bc824695590598c9b939bf.png" alt="School crest" class="hero-logo">
+    <p class="eyebrow">District Sports Events 2026</p>
+    <h1>DZIVARASEKWA 2 HIGH SCHOOL</h1>
+    <p class="hero-sub">Sports Events Management System</p>
+
+    <div class="hero-facts">
+      <div class="fact"><span class="fact-label">Date</span><span class="fact-value">25 September 2026</span></div>
+      <div class="fact"><span class="fact-label">District</span><span class="fact-value">Warren Park–Mabelreign</span></div>
+    </div>
+
+    <p class="hero-desc">Follow fixtures, venues and match results for the 2026 district sports events.</p>
+
+    <!-- SIGNATURE ELEMENT: live countdown -->
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="countdown-unit"><span class="cd-num" id="cdDays">00</span><span class="cd-label">Days</span></div>
+      <div class="countdown-unit"><span class="cd-num" id="cdHours">00</span><span class="cd-label">Hours</span></div>
+      <div class="countdown-unit"><span class="cd-num" id="cdMins">00</span><span class="cd-label">Mins</span></div>
+      <div class="countdown-unit"><span class="cd-num" id="cdSecs">00</span><span class="cd-label">Secs</span></div>
+    </div>
+    <p class="countdown-caption">until the first whistle</p>
+
+    <a href="#fixtures" class="btn btn-primary">View Fixtures</a>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="dashboard">
+  <div class="section-inner">
+    <div class="stats-grid" id="statsGrid"></div>
+  </div>
+</section>
+
+<!-- SPORTS -->
+<section class="sports" id="sports">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-dark">What's on</p>
+    <h2 class="section-title">Sports</h2>
+    <div class="sports-grid" id="sportsGrid"></div>
+  </div>
+</section>
+
+<!-- FIXTURES -->
+<section class="fixtures" id="fixtures">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-dark">Match Day: 25 September 2026</p>
+    <h2 class="section-title">Fixtures</h2>
+
+    <div class="controls">
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="All">All Sports</button>
+        <button class="filter-btn" data-filter="Soccer">Soccer</button>
+        <button class="filter-btn" data-filter="Volleyball">Volleyball</button>
+        <button class="filter-btn" data-filter="Basketball">Basketball</button>
+        <button class="filter-btn" data-filter="Netball">Netball</button>
+        <button class="filter-btn" data-filter="Handball">Handball</button>
+      </div>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search by team, sport or venue...">
+    </div>
+
+    <div class="fixtures-grid" id="fixturesGrid"></div>
+    <p class="empty-state" id="fixturesEmpty" hidden>No fixtures match your search.</p>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-dark">After the whistle</p>
+    <h2 class="section-title">Results</h2>
+    <div id="resultsList"></div>
+  </div>
+</section>
+
+<!-- VENUES -->
+<section class="venues" id="venues">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-dark">Warren Park–Mabelreign District</p>
+    <h2 class="section-title">Venues</h2>
+    <p class="demo-warning">⚠ Demo/sample venue information below. The administrator should replace these with confirmed official venues before the event.</p>
+    <div class="venues-grid" id="venuesGrid"></div>
+  </div>
+</section>
+
+<!-- MANAGEMENT -->
+<section class="management" id="management">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-dark">Staff Only</p>
+    <h2 class="section-title">Management</h2>
+
+    <div id="loginGate" class="login-gate">
+      <p>Sign in to manage fixtures and results.</p>
+      <button class="btn btn-primary" id="loginBtn">Staff Login</button>
+    </div>
+
+    <div id="managementPanel" class="management-panel" hidden>
+      <div class="panel-header">
+        <p>Signed in as Staff</p>
+        <button class="btn btn-ghost" id="logoutBtn">Log out</button>
+      </div>
+
+      <form id="fixtureForm" class="fixture-form">
+        <input type="hidden" id="fixtureId">
+        <div class="form-row">
+          <label>Sport
+            <select id="fSport" required>
+              <option value="Soccer">Soccer</option>
+              <option value="Volleyball">Volleyball</option>
+              <option value="Basketball">Basketball</option>
+              <option value="Netball">Netball</option>
+              <option value="Handball">Handball</option>
+            </select>
+          </label>
+          <label>Status
+            <select id="fStatus" required>
+              <option value="Upcoming">Upcoming</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Home Team <input type="text" id="fHome" required placeholder="e.g. Dzivarasekwa 2 High School"></label>
+          <label>Away Team <input type="text" id="fAway" required placeholder="e.g. Sample High School"></label>
+        </div>
+        <div class="form-row">
+          <label>Date <input type="text" id="fDate" required placeholder="25 September 2026"></label>
+          <label>Time <input type="time" id="fTime" required></label>
+        </div>
+        <div class="form-row">
+          <label>Venue <input type="text" id="fVenue" required placeholder="e.g. D2HS Grounds"></label>
+          <label>Result <input type="text" id="fResult" placeholder="e.g. 2 - 1"></label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="formSubmitBtn">Add Fixture</button>
+          <button type="button" class="btn btn-ghost" id="formCancelBtn" hidden>Cancel Edit</button>
+        </div>
+      </form>
+
+      <div id="toast" class="toast" hidden></div>
+
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr><th>Sport</th><th>Match</th><th>Date/Time</th><th>Venue</th><th>Status</th><th>Result</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="adminTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img src="images/file_00000000f6bc824695590598c9b939bf.png" alt="School crest" class="footer-logo">
+    <div>
+      <p class="footer-title">Dzivarasekwa 2 High School</p>
+      <p class="footer-sub">Sports Events Management System · Warren Park–Mabelreign District</p>
+    </div>
+  </div>
+  <p class="footer-credit">Designed &amp; developed by Blessing</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
